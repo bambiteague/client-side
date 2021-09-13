@@ -5,20 +5,17 @@ const postReducer = (state = { posts: [], requesting: false }, action) => {
         ...state,
         requesting: true,
       };
-      break;
-      // will start a request to our backend to get the posts
-      // remember fetch is asynchonous
-      // now if it is still requesting(set to 'true') you can optionally add a loading screen/message
+
     case "ADDING_POSTS":
       return {
         ...state,
         requesting: false,
-        posts: [...action.posts]
-      }
-      break;
+        posts: [...action.posts],
+      };
 
     default:
-      return state
-      break;
+      return state;
   }
 };
+
+export default postReducer;
