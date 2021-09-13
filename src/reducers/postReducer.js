@@ -1,4 +1,4 @@
-const postReducer = (state = { posts: [], requesting: false }, action) => {
+const postReducer = (state = { posts: [], requesting: true }, action) => {
   switch (action.type) {
     case "START_FETCHING_POSTS":
       return {
@@ -10,7 +10,7 @@ const postReducer = (state = { posts: [], requesting: false }, action) => {
       return {
         ...state,
         requesting: false,
-        posts: [...action.posts],
+        posts: [...state.posts, action.payload],
       };
 
     default:

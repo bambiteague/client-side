@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import { fetchPosts } from "../actions/posts";
-
 export class Posts extends Component {
   componentDidMount() {
     this.props.fetchPosts();
@@ -25,10 +23,10 @@ export class Posts extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({postReducer}) => {
   return {
-    posts: postsReducer.posts,
-    requesting: postsReducer.requesting,
+    posts: postReducer.posts,
+    requesting: postReducer.requesting,
   };
 };
 
