@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# To access backend repo on Github:
+
+        https://github.com/bambiteague/blogger-api.git
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
