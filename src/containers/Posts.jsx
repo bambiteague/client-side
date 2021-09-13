@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux'
 
 export class Posts extends Component {
+
+   componentDidMount() {
+
+   }
   render() {
     return (
       <div>
@@ -10,4 +15,4 @@ export class Posts extends Component {
   }
 }
 
-export default Posts;
+export default connect()(Posts);
