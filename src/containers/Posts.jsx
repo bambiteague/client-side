@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
+import { fetchPosts } from "../actions/posts";
 
 export class Posts extends Component {
-
-   componentDidMount() {
-
-   }
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
   render() {
     return (
       <div>
@@ -15,4 +15,4 @@ export class Posts extends Component {
   }
 }
 
-export default connect()(Posts);
+export default connect(null, { fetchPosts })(Posts);
