@@ -5,12 +5,13 @@ const postReducer = (state = { posts: [], requesting: true }, action) => {
         ...state,
         requesting: true,
       };
-
+      
     case "ADDING_POSTS":
       return {
         ...state,
         requesting: false,
         posts: [...state.posts, action.payload],
+        
       };
 
     default:

@@ -6,6 +6,7 @@ export class Posts extends Component {
     this.props.fetchPosts();
   }
   render() {
+    debugger
     return (
       <div>
         <h1>Posts</h1>
@@ -14,7 +15,7 @@ export class Posts extends Component {
         ) : (
           this.props.posts.map((post) => (
             <h3>
-              {post.title} - {post.author}
+              {/* {post.title} - {post.author} */}
             </h3>
           ))
         )}
@@ -23,7 +24,8 @@ export class Posts extends Component {
   }
 }
 
-const mapStateToProps = ({postReducer}) => {
+const mapStateToProps = ({ postReducer }) => {
+  //debugger
   return {
     posts: postReducer.posts,
     requesting: postReducer.requesting,
