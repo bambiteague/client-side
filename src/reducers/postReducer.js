@@ -8,9 +8,8 @@ const postReducer = (state = { posts: [], requesting: true }, action) => {
       };
     case "ADDING_POSTS":
       return {
-        ...state,
+        posts: [...state],
         requesting: false,
-        // posts: [...posts.setState(json)],
       };
     default:
       return state;
