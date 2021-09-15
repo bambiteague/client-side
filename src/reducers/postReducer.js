@@ -6,11 +6,15 @@ const postReducer = (state = { posts: [], requesting: true }, action) => {
         ...state,
         requesting: true,
       };
+
     case "ADDING_POSTS":
       return {
-        posts: [...state],
+        ...state,
         requesting: false,
+        posts: state.concat([action.data])
       };
+      
+
     default:
       return state;
   }

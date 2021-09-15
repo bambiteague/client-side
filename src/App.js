@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Switch } from "react-router";
 import Home from "./components/Home";
-import Posts from "./containers/Posts";
+import AllPosts from "./containers/AllPosts";
 import PostForm from "./components/PostForm";
 import NavBar from "./components/Navbar";
 
@@ -26,7 +26,7 @@ function App() {
             <Route
               exact
               path="/posts"
-              render={(routerprops) => <Posts {...routerprops} />}
+              render={(routerprops) => <AllPosts {...routerprops} />}
             />
           </Switch>
         </div>
