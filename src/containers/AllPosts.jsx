@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/fetchPosts";
+
 export class AllPosts extends Component {
   componentDidMount() {
       this.props.fetchPosts()
-      debugger
+      //debugger
   };
 
   render() {

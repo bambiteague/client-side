@@ -1,6 +1,11 @@
-
-const postReducer = (state = { posts: [], requesting: true }, action) => {
-  switch(action.type) {
+const postReducer = (
+  state = {
+    posts: [],
+    requesting: true,
+  },
+  action
+) => {
+  switch (action.type) {
     case "START_FETCHING_POSTS":
       return {
         ...state,
@@ -8,13 +13,11 @@ const postReducer = (state = { posts: [], requesting: true }, action) => {
       };
 
     case "ADDING_POSTS":
-      debugger
       return {
         ...state,
         requesting: false,
-        posts: state([action.data])
+        posts: [state.posts], // according to the lessons, this is correctly how I want to set the value of the posts key here.
       };
-      
 
     default:
       return state;
