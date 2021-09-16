@@ -8,10 +8,11 @@ const postReducer = (state = { posts: [], requesting: true }, action) => {
       };
 
     case "ADDING_POSTS":
+      debugger
       return {
         ...state,
         requesting: false,
-        posts: state.concat([action.data])
+        posts: state([action.data])
       };
       
 

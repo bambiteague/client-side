@@ -8,7 +8,8 @@ import { rootReducer } from "./reducers/rootReducer";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk));
+//  ' window.__REDUX_DEVTOOLS_EXTENSION__ && window.      __REDUX_DEVTOOLS_EXTENSION__()'  <--add as arguement to access the DevTools
 
 ReactDOM.render(
   <React.StrictMode>

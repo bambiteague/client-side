@@ -8,14 +8,16 @@ export class PostForm extends Component {
     const data = {
       id: new Date(),
       title,
-      content
-    }
+      content,
+    };
     // debugger
-    // this.props.dispatch({
-    //   type:'ADDING_POSTS',
-    //   data});
-    // this.getTitle.value = '';
-    // this.getMessage.value = '';
+    this.props.dispatch({
+      // <---- gettting an error ' cannot call .dispatch on -undefined- '
+      type: "ADDING_POSTS",
+      data,
+    });
+    this.getTitle.value = "";
+    this.getMessage.value = "";
   };
 
   render() {
@@ -23,10 +25,21 @@ export class PostForm extends Component {
       <div>
         <h1>Create Post</h1>
         <form onSubmit={this.handleSubmit}>
-          <input required type="text" ref={(input)=>this.getTitle = input} placeholder="Enter Post Title" />
+          <input
+            required
+            type="text"
+            ref={(input) => (this.getTitle = input)}
+            placeholder="Enter Post Title"
+          />
           <br />
           <br />
-          <textarea required rows="5" ref={(input)=>this.getMessage = input} cols="28" placeholder="Write Your Post Here" />
+          <textarea
+            required
+            rows="5"
+            ref={(input) => (this.getMessage = input)}
+            cols="28"
+            placeholder="Write Your Post Here"
+          />
           <br />
           <br />
           <button>Submit</button>

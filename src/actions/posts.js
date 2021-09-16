@@ -5,6 +5,7 @@ export const fetchPosts = () => {
       .then((response) => response.json())
       .then((posts) => {
         dispatch({ type: "ADDING_POSTS" }, posts);
+        debugger
       });
   };
 };
