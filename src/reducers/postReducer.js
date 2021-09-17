@@ -16,7 +16,7 @@ const postReducer = (
       return {
         ...state,
         requesting: false,
-        posts: [state.posts], // according to the lessons, this is correctly how I want to set the value of the posts key here.
+        posts: [state.posts], 
       };
 
     default:

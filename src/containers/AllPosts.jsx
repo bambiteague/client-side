@@ -4,9 +4,12 @@ import { fetchPosts } from "../actions/fetchPosts";
 
 export class AllPosts extends Component {
   componentDidMount() {
-      this.props.fetchPosts()
-      //debugger
-  };
+    this.props.fetchPosts();
+  }
+  // ^ I think this needs modifying
+
+  // <li key={astro.id}>{astro.name}</li>
+
 
   render() {
     return (
@@ -16,12 +19,17 @@ export class AllPosts extends Component {
           <h1>Loading...</h1>
         ) : (
           this.props.posts.map((post) => (
-            <h3>{post.title} - {post.author}</h3>
+            <li key={post.id}>{post.title} - {post.author}</li>
           ))
         )}
       </div>
     );
   }
+
+}
+
+function mapDispatchToProps(dispatch) {
+  return { fetchPosts: () => dispatch(fetchPosts()) };
 }
 
 const mapStateToProps = ({ postReducer }) => {
@@ -31,4 +39,4 @@ const mapStateToProps = ({ postReducer }) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchPosts })(AllPosts);
+export default connect(mapStateToProps, mapDispatchToProps)(AllPosts);
