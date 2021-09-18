@@ -6,26 +6,26 @@ export class AllPosts extends Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
-  // ^ I think this needs modifying
-
-  // <li key={astro.id}>{astro.name}</li>
-
+  // handleOnClick() {
+  //   this.props.fetchPosts();
+  // }
 
   render() {
     return (
       <div>
         <h1>Posts</h1>
         {this.props.requesting ? (
-          <h1>Loading...</h1>
+          <h1>Loading...</h1>   
         ) : (
           this.props.posts.map((post) => (
-            <li key={post.id}>{post.title} - {post.author}</li>
+            <ul>
+            <li key={post.id}>{post.title} - {post.author_id.name}</li>
+            </ul>   //code making it to .map, but post object is showing undefined
           ))
         )}
       </div>
     );
   }
-
 }
 
 function mapDispatchToProps(dispatch) {

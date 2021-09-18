@@ -9,3 +9,5 @@ export const fetchPosts = () => {
   };
 };
 
+// Good to go, properly fetching the posts I seeded. 
+
