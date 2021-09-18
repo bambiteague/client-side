@@ -1,18 +1,19 @@
-import "./App.css";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Switch } from "react-router";
 import Home from "./components/Home";
 import AllPosts from "./containers/AllPosts";
 import PostForm from "./components/PostForm";
 import NavBar from "./components/Navbar";
+import SinglePost from "./components/SinglePost";
 
 function App() {
   return (
     <div>
       <Router>
         <NavBar />
-        <div>
-          <Switch>
+        <Switch>
+          <div>
             <Route
               exact
               path="/home"
@@ -28,8 +29,13 @@ function App() {
               path="/posts"
               render={(routerprops) => <AllPosts {...routerprops} />}
             />
-          </Switch>
-        </div>
+          </div>
+          <Route 
+            exact
+            path="/posts/postId"
+            render={(routerprops) => <SinglePost {...routerprops} />}
+            />
+        </Switch>
       </Router>
     </div>
   );
