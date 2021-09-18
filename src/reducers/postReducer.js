@@ -9,15 +9,14 @@ const postReducer = (
     case "START_FETCHING_POSTS":
       return {
         ...state,
-        posts: [state.posts],
+        posts: [action.payload],
         requesting: true,
       };
-      // posts are getting fetched and found, but not added to be seen 
-      //the case below needs to be reached, why is it not getting there to update the state?
+
     case "DISPLAYING_POSTS":
       return {
         ...state,
-        posts: [action.posts],
+        posts: [...action.payload],
         requesting: false, 
       };
     default:

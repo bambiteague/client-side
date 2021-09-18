@@ -5,7 +5,6 @@ import { fetchPosts } from "../actions/fetchPosts";
 export class AllPosts extends Component {
   componentDidMount() {
     return this.props.fetchPosts();
-    //debugger
   }
 
   render() {
@@ -17,8 +16,8 @@ export class AllPosts extends Component {
         ) : (
           this.props.posts.map((post) => (
             <ul>
-            <li key={post.id}>{post.title} - {post.author_id.name}</li>
-            </ul>   //code making it to .map, but post object is showing undefined
+            <li key={post.id}> <h3>{post.title}</h3><br/>{post.content}</li>
+            </ul>   
           ))
         )}
       </div>
@@ -27,9 +26,9 @@ export class AllPosts extends Component {
   
 }
 
-function mapDispatchToProps(dispatch) {
-  return { fetchPosts: () => dispatch(fetchPosts()) };
-}
+// function mapDispatchToProps(dispatch) {
+//   return { fetchPosts: () => dispatch(fetchPosts()) };
+// }
 
 const mapStateToProps = ({ postReducer }) => {
   return {
@@ -38,4 +37,4 @@ const mapStateToProps = ({ postReducer }) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllPosts);
+export default connect(mapStateToProps, {fetchPosts})(AllPosts);
