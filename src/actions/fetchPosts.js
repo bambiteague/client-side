@@ -4,7 +4,8 @@ export const fetchPosts = () => {
     fetch("http://localhost:3001/posts")
       .then((response) => response.json())
       .then((posts) => {
-        dispatch({ type: "ADDING_POSTS" }, posts);
+        dispatch({ type: "DISPLAYING_POSTS" }, posts);
+        debugger
       });
   };
 };

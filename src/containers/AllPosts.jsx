@@ -4,11 +4,9 @@ import { fetchPosts } from "../actions/fetchPosts";
 
 export class AllPosts extends Component {
   componentDidMount() {
-    this.props.fetchPosts();
+    return this.props.fetchPosts();
+    //debugger
   }
-  // handleOnClick() {
-  //   this.props.fetchPosts();
-  // }
 
   render() {
     return (
@@ -26,6 +24,7 @@ export class AllPosts extends Component {
       </div>
     );
   }
+  
 }
 
 function mapDispatchToProps(dispatch) {
