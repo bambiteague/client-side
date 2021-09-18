@@ -16,7 +16,7 @@ export class AllPosts extends Component {
         ) : (
           this.props.posts.map((post) => (
             <ul>
-            <li key={post.id}> <h3>{post.title}</h3><br/>{post.content}</li>
+            <li key={post.id}> <h3>{post.title}</h3><br/>by: {post.author.name}</li>
             </ul>   
           ))
         )}
@@ -25,10 +25,6 @@ export class AllPosts extends Component {
   }
   
 }
-
-// function mapDispatchToProps(dispatch) {
-//   return { fetchPosts: () => dispatch(fetchPosts()) };
-// }
 
 const mapStateToProps = ({ postReducer }) => {
   return {
