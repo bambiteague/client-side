@@ -16,7 +16,6 @@ export class AllPosts extends Component {
           <h1>Loading...</h1>
         ) : (
           this.props.posts.map((post) => (
-            <ul>
               <li key={post.id}>
                 <h3>
                   <span>
@@ -25,7 +24,6 @@ export class AllPosts extends Component {
                 </h3>
                 by: {post.author.name}
               </li>
-            </ul>
           ))
         )}
       </div>

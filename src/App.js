@@ -14,7 +14,6 @@ function App() {
       <Router>
         <NavBar />
         <Switch>
-          <>
             <Route
               exact
               path="/home"
@@ -30,8 +29,7 @@ function App() {
               path="/posts"
               render={(routerprops) => <AllPosts {...routerprops} />}
             />
-          </>
-          
+          <>
           <Route 
             exact
             path="/posts/:postId"
@@ -42,6 +40,7 @@ function App() {
             path="/posts/new"  // Not positive this is correct and need to come back
             render={(routerprops) => <PostSubmitButton {...routerprops} />}
             />
+            </>
         </Switch>
       </Router>
     </div>

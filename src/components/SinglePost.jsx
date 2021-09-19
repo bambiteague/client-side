@@ -1,28 +1,25 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-const SinglePost = ({ match }) => {
-  const { postId } = match.params;
-  const post = useSelector((state) =>
-    state.props.find((post) => post.id === postId)
-  );
-  if (!post) {
-    return (
-      <section>
-        {" "}
-        <h2>Post not found!</h2>{" "}
-      </section>
-    );
-  }
-  return (
-    <section>
-      {" "}
-      <article className="post">
-        {" "}
-        <h2>{post.title}</h2> <p className="post-content">{post.content}</p>{" "}
-      </article>{" "}
-    </section>
-  );
+export class SinglePost extends Component {
+    render() {
+     const post = this.props.match
+     
+        return (
+           
+            <article className="post">
+                {" "}
+                <h2>{post.title}</h2> <p className="post-content">{post.content}</p>{" "}
+            </article>
+        );
+    }
 };
 
-export default SinglePost;
+// const mapStateToProps = ({ postReducer }) => {
+//   return {
+//     post: postReducer.post,
+//     requesting: postReducer.requesting,
+//   };
+// };
+
+export default connect( )(SinglePost);
