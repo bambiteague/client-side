@@ -16,14 +16,12 @@ export class AllPosts extends Component {
           <h1>Loading...</h1>
         ) : (
           this.props.posts.map((post) => (
-              <li key={post.id}>
-                <h3>
+              <p key={post.id}>
                   <span>
-                    <Link to={`/posts/${post.id}`}>{post.title}</Link>
+                    <Link to={`/posts/${post.id}`}>{post.title}<br/></Link>
                   </span>
-                </h3>
-                by: {post.author.name}
-              </li>
+                 by: {post.author.name}
+              </p>
           ))
         )}
       </div>

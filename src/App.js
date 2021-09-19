@@ -29,7 +29,6 @@ function App() {
               path="/posts"
               render={(routerprops) => <AllPosts {...routerprops} />}
             />
-          <>
           <Route 
             exact
             path="/posts/:postId"
@@ -37,10 +36,9 @@ function App() {
             />
             <Route 
             exact
-            path="/posts/new"  // Not positive this is correct and need to come back
+            path="/posts"  
             render={(routerprops) => <PostSubmitButton {...routerprops} />}
             />
-            </>
         </Switch>
       </Router>
     </div>
