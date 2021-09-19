@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchPosts } from "../actions/fetchPosts";
 
@@ -19,9 +19,9 @@ export class AllPosts extends Component {
             <ul>
               <li key={post.id}>
                 <h3>
-                  <Link to="/posts/{post.postId}">
-                    {post.title}
-                  </Link>
+                  <span>
+                    <Link to={`/posts/${post.id}`}>{post.title}</Link>
+                  </span>
                 </h3>
                 by: {post.author.name}
               </li>
