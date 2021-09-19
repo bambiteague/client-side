@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const SinglePost = ({ match }) => {
   const { postId } = match.params;
   const post = useSelector((state) =>
-    state.post.find((post) => post.id === postId)
+    state.props.find((post) => post.id === postId)
   );
   if (!post) {
     return (
