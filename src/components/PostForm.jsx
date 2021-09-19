@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PostSubmitButton from "./PostSubmitButton";
 
 export class PostForm extends Component {
   constructor(props) {
@@ -31,36 +32,39 @@ export class PostForm extends Component {
       <div>
         <form onSubmit={this.postForm}>
           <div className="input-group">
-            <label htmlFor="postTitle">Title</label>
+            <label htmlFor="title">Title</label>
             <input
               type="string"
-              name="postTitle"
-              id="postTitle"
-              value={this.state.values.postTitle}
+              name="title"
+              id="title"
+              value={this.state.values.title}
               onChange={this.handleInputChange}
               title="Title"
               required
             />
           </div>
           <div className="input-group">
-            <label htmlFor="postContent">Post Content</label>
+            <label htmlFor="content">Post Content</label>
             <input
               type="text"
-              name="postContent"
-              id="postContent"
-              value={this.state.values.postContent}
+              name="content"
+              id="content"
+              value={this.state.values.content}
               onChange={this.handleInputChange}
               title="password"
               required
             />
           </div>
-          <button type="submit">Submit</button>
+          <PostSubmitButton/>
         </form>
       </div>
     );
   }
 
 }
+
+export default PostForm;
+
 // handleSubmit = (event) => {
 //     event.preventDefault();
 //     const title = this.getTitle.value;
@@ -108,4 +112,4 @@ export class PostForm extends Component {
 //   }
 // }
 
-export default PostForm;
+

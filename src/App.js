@@ -6,6 +6,7 @@ import AllPosts from "./containers/AllPosts";
 import PostForm from "./components/PostForm";
 import NavBar from "./components/Navbar";
 import SinglePost from "./components/SinglePost";
+import PostSubmitButton from "./components/PostSubmitButton";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <NavBar />
         <Switch>
+          <>
           <div>
             <Route
               exact
@@ -30,10 +32,17 @@ function App() {
               render={(routerprops) => <AllPosts {...routerprops} />}
             />
           </div>
+          </>
+          {/* END OF NAVBAR LINKS ------------------------------------------- */}
           <Route 
             exact
             path="/posts/postId"
             render={(routerprops) => <SinglePost {...routerprops} />}
+            />
+            <Route 
+            exact
+            path="/posts/new"  // Not positive this is correct and need to come back
+            render={(routerprops) => <PostSubmitButton {...routerprops} />}
             />
         </Switch>
       </Router>

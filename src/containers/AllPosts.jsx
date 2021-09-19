@@ -19,7 +19,7 @@ export class AllPosts extends Component {
             <ul>
               <li key={post.id}>
                 <h3>
-                  <Link to="/posts/{post.id}">
+                  <Link to="/posts/{post.postId}">
                     {post.title}
                   </Link>
                 </h3>
