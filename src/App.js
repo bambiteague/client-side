@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import { Switch } from "react-router";
 import Home from "./components/Home";
 import AllPosts from "./containers/AllPosts";
@@ -15,7 +15,6 @@ function App() {
         <NavBar />
         <Switch>
           <>
-          <div>
             <Route
               exact
               path="/home"
@@ -31,14 +30,8 @@ function App() {
               path="/posts"
               render={(routerprops) => <AllPosts {...routerprops} />}
             />
-          </div>
           </>
-          {/* END OF NAVBAR LINKS ------------------------------------------- */}
-          <Route 
-            exact
-            path="/posts/postId"
-            render={(routerprops) => <SinglePost {...routerprops} />}
-            />
+            <Route exact path="/posts/:postId" component={SinglePost} />  
             <Route 
             exact
             path="/posts/new"  // Not positive this is correct and need to come back
