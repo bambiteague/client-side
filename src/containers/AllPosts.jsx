@@ -5,14 +5,20 @@ import { fetchPosts } from "../actions/fetchPosts";
 
 export class AllPosts extends Component {
   componentDidMount() {
-    return this.props.fetchPosts();
+   this.setState({...this.state, hasMounted: true})
+   return this.props.fetchPosts();
+  }
+
+  constructor() {
+    super()
+    this.state = {hasMounted: false}
   }
 
   render() {
     return (
       <div>
         <h1>Posts</h1>
-        {this.props.requesting ? (
+        {this.props.requesting || !this.state.hasMounted ? (
           <h1>Loading...</h1>
         ) : (
           this.props.posts.map((post) => (
@@ -35,5 +41,6 @@ const mapStateToProps = ({ postReducer }) => {
     requesting: postReducer.requesting,
   };
 };
+
 
 export default connect(mapStateToProps, { fetchPosts })(AllPosts);

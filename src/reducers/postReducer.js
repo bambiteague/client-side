@@ -17,16 +17,17 @@ const postReducer = (
       return {
         ...state,
         posts: [...action.payload],
-        requesting: false, 
-      }; 
+        requesting: false,
+      };
 
     case "DISPLAY_SPECIFIC_POST":
-      const index = state.posts.findIndex(post => post.id !== action.payload)
-      const newArray = [...state.posts];
-      newArray[index].completed = true
+      const post = action.payload.posts.find(
+        (post) => post.id === Number(action.payload.postId)
+      );
       return {
         ...state,
-        post: [newArray],
+        post: post,
+        requesting: false,
       };
 
     default:
