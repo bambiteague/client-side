@@ -12,7 +12,7 @@ export class PostForm extends Component {
       content,
     };
 
-    this.props.submitPost(data)
+    this.props.submitPost(data);
     this.getTitle.value = "";
     this.getMessage.value = "";
   };
@@ -47,4 +47,3 @@ export class PostForm extends Component {
 }
 
 export default connect(null, { submitPost })(PostForm);
-

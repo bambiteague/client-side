@@ -6,7 +6,7 @@ import AllPosts from "./containers/AllPosts";
 import PostForm from "./components/PostForm";
 import NavBar from "./components/Navbar";
 import SinglePost from "./components/SinglePost";
-import { UserRegistration } from "./components/userRegistration";
+import { UserRegistration } from "./containers/UserRegistration";
 
 function App() {
   return (

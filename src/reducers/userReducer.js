@@ -15,19 +15,19 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         profile: action.payload.user,
-        formSubmitted: false, // after update user formsubmition reset
+        formSubmitted: false, 
       };
     case Types.ADD_USER:
       return {
         ...state,
         profile: action.payload.user,
-        formSubmitted: false, // after update user formsubmition reset
+        formSubmitted: false, 
       };
     case Types.UPDATE_USER:
       return {
         ...state,
         profile: action.payload.user,
-        formSubmitted: false, // after update user formsubmition reset
+        formSubmitted: false, 
       };
     case Types.FORM_SUBMITION_STATUS:
       return {
