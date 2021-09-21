@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { submitForm } from "../actions/submitRegistration";
-import { addUser } from "../actions/submitRegistration";
 
 export class UserRegistration extends Component {
-  componentDidMount() {
-    this.setState({ ...this.state, hasMounted: true });
-    return this.props.addUser();
-  }
-
   constructor() {
     super();
     this.state = {
@@ -19,17 +13,14 @@ export class UserRegistration extends Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({ ...this.state, hasMounted: true });
+    return this.props.submitForm(); // it's telling me that submitForm isn't a function??
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    const username = this.getUsername.value;
-    const password = this.getPassword.value;
-    const data = {
-      username,
-      password,
-    };
-    this.props.submitForm(data);  // it's telling me this isn't a function...?
-    this.getUsername.value = "";
-    this.getPassword.value = "";
+    this.props.submitForm(this.state); // it's telling me that submitForm isn't a function??
   };
 
   render() {
@@ -76,6 +67,6 @@ const mapStateToProps = (userReducer) => {
   };
 };
 
-// const mapDispatchtoProps = (dispatch) =>
+// const mapDispatchtoProps = (dispatch) => {}
 
-export default connect(mapStateToProps, { addUser })(UserRegistration);
+export default connect(mapStateToProps, { submitForm })(UserRegistration);

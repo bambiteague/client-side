@@ -1,4 +1,6 @@
-  export const addUser = (user) => ({ type: "ADD_USER", payload: user });
+import { ActionCreators } from '../actions/userActions'
+
+export const addProfile = (user) => (ActionCreators.addProfile());
 
   export const submitForm = (user) => {
     return (dispatch) => {
@@ -13,7 +15,7 @@
       fetch("http://localhost:3001/users", configObj)
         .then((response) => response.json())
         .then((json) => {
-          dispatch(addUser(json));
+          dispatch(addProfile(json));
         });
     };
   };
