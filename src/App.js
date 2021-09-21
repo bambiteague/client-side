@@ -6,6 +6,7 @@ import AllPosts from "./containers/AllPosts";
 import PostForm from "./components/PostForm";
 import NavBar from "./components/Navbar";
 import SinglePost from "./components/SinglePost";
+import { UserRegistration } from "./components/userRegistration";
 
 function App() {
   return (
@@ -13,6 +14,11 @@ function App() {
       <Router>
         <NavBar />
         <Switch>
+        <Route
+              exact
+              path="/user/new"
+              render={(routerprops) => <UserRegistration {...routerprops} />}
+            />
             <Route
               exact
               path="/home"

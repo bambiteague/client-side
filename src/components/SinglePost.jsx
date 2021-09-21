@@ -13,6 +13,9 @@ export class SinglePost extends Component {
     this.state = { hasMounted: false };
   }
 
+  // ^ I think the above should probably get refactored into a mapDispatchToProps function
+  // leaving as is for now, to make sure application still works as planned - update later!
+
   render() {
     return (
       <div>
