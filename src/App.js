@@ -6,7 +6,6 @@ import AllPosts from "./containers/AllPosts";
 import PostForm from "./components/PostForm";
 import NavBar from "./components/Navbar";
 import SinglePost from "./components/SinglePost";
-import PostSubmitButton from "./components/PostSubmitButton";
 
 function App() {
   return (
@@ -33,11 +32,6 @@ function App() {
             exact
             path="/posts/:postId"
             render={(routerprops) => <SinglePost {...routerprops} />}
-            />
-            <Route 
-            exact
-            path="/posts"  
-            render={(routerprops) => <PostSubmitButton {...routerprops} />}
             />
         </Switch>
       </Router>
