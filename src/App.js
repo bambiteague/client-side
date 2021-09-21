@@ -16,7 +16,7 @@ function App() {
         <Switch>
         <Route
               exact
-              path="/user/new"
+              path="/users"
               render={(routerprops) => <UserRegistration {...routerprops} />}
             />
             <Route
