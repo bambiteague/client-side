@@ -31,6 +31,19 @@ const postReducer = (
         requesting: false,
       };
 
+      case "DELETE_POST":
+        return {
+          ...state,
+          post: state.posts.filter(post => post !== action.payload.postId)
+        };
+
+        case "UPDATE_POST":
+          // const post = action.payload.posts.find(
+          //   (post) => post.id === Number(action.payload.postId)
+          // );
+          return {};
+
+
     default:
       return state;
   }

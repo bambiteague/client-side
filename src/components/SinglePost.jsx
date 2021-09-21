@@ -1,5 +1,9 @@
 import React, { Component } from "react";
-import { fetchSinglePost } from "../actions/fetchSinglePost";
+import {
+  fetchSinglePost,
+  handleDelete,
+  handleUpdate,
+} from "../actions/SinglePostCrud.js";
 import { connect } from "react-redux";
 
 export class SinglePost extends Component {
@@ -10,24 +14,32 @@ export class SinglePost extends Component {
 
   constructor() {
     super();
-    this.state = { hasMounted: false };
+    this.state = {
+      hasMounted: false,
+    };
   }
-
-  handleDelete = () => {}
-
-  handleUpdate = () => {}
 
   render() {
     return (
       <div>
-        {this.props.requesting || !this.state.hasMounted ? (
+        {this.props.requesting ? (
           <h1>Loading...</h1>
         ) : (
           <article className="post">
             {" "}
-            <h2>{this.props.post.title}</h2>
-            {/* putting buttons here to DELETE or UPDATE post Content */}     <button className="delete-button" onClick{this.deletePost} => ></article> >Delete</button> 
-            <button className="update-button">Update</button>
+            <h2>{this.props.post.title}</h2>{" "}
+            <button
+              key={this.props.id}
+              onClick={(postId) => this.props.handleDelete(this.props.postId)}
+            >
+              Delete
+            </button>
+            <button
+              key={this.props.id}
+              onClick={(postId) => this.props.handleUpdate(this.props.postId)}
+            >
+              Update
+            </button>
             <p className="post-content">{this.props.post.content}</p>{" "}
           </article>
         )}
@@ -43,4 +55,8 @@ const mapStateToProps = ({ postReducer }) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchSinglePost })(SinglePost);
+export default connect(mapStateToProps, { 
+  fetchSinglePost,
+  handleDelete,
+  handleUpdate, 
+})(SinglePost);
