@@ -26,7 +26,7 @@ export class AllPosts extends Component {
                   <span>
                     <Link to={`/posts/${post.id}`}>{post.title}<br/></Link>
                   </span>
-                 {/* by: {post.author.name} */}  
+                 {/* by: {post.user.name}   */}
               </p>
           ))
         )}

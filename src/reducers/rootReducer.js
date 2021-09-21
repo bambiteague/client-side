@@ -4,7 +4,8 @@ import postFormReducer from "./postFormReducer";
 import userReducer from "./userReducer";
 
 export const rootReducer = combineReducers({
+  userReducer,
   postReducer,
   postFormReducer,
-  userReducer,
+  
 });

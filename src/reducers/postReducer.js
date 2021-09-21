@@ -14,6 +14,7 @@ const postReducer = (
       };
 
     case "DISPLAYING_POSTS":
+      // debugger
       return {
         ...state,
         posts: [...action.payload],

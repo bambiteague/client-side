@@ -13,8 +13,9 @@ export class SinglePost extends Component {
     this.state = { hasMounted: false };
   }
 
-  // ^ I think the above should probably get refactored into a mapDispatchToProps function
-  // leaving as is for now, to make sure application still works as planned - update later!
+  handleDelete = () => {}
+
+  handleUpdate = () => {}
 
   render() {
     return (
@@ -25,6 +26,8 @@ export class SinglePost extends Component {
           <article className="post">
             {" "}
             <h2>{this.props.post.title}</h2>
+            {/* putting buttons here to DELETE or UPDATE post Content */}     <button className="delete-button" onClick{this.deletePost} => ></article> >Delete</button> 
+            <button className="update-button">Update</button>
             <p className="post-content">{this.props.post.content}</p>{" "}
           </article>
         )}
