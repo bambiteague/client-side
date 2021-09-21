@@ -34,14 +34,15 @@ const postReducer = (
       case "DELETE_POST":
         return {
           ...state,
-          post: state.posts.filter(post => post !== action.payload.postId)
+          post: state.posts.filter(post => post !== action.payload),
+          requesting: false
         };
 
-        case "UPDATE_POST":
-          // const post = action.payload.posts.find(
-          //   (post) => post.id === Number(action.payload.postId)
-          // );
-          return {};
+        // case "UPDATE_POST":
+        //   // const post = action.payload.posts.find(
+        //   //   (post) => post.id === Number(action.payload.postId)
+        //   // );
+        //   return {};
 
 
     default:

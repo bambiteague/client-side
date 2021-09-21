@@ -20,6 +20,7 @@ export class SinglePost extends Component {
   }
 
   render() {
+    //debugger
     return (
       <div>
         {this.props.requesting ? (
@@ -30,13 +31,13 @@ export class SinglePost extends Component {
             <h2>{this.props.post.title}</h2>{" "}
             <button
               key={this.props.id}
-              onClick={(postId) => this.props.handleDelete(this.props.postId)}
+              onClick={() => this.props.handleDelete(this.props.post.postId)}
             >
               Delete
             </button>
             <button
               key={this.props.id}
-              onClick={(postId) => this.props.handleUpdate(this.props.postId)}
+              onClick={() => this.props.handleUpdate(this.props.post.postId)}
             >
               Update
             </button>
@@ -55,8 +56,8 @@ const mapStateToProps = ({ postReducer }) => {
   };
 };
 
-export default connect(mapStateToProps, { 
+export default connect(mapStateToProps, {
   fetchSinglePost,
   handleDelete,
-  handleUpdate, 
+  handleUpdate,
 })(SinglePost);
